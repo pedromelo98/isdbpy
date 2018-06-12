@@ -56,6 +56,13 @@
               <iframe class="embed-responsive-item" src={{tv_show.trailer}} allowfullscreen></iframe>
             </div>
         </div>
+        <hr class="my-4">
+        <h3>Elenco:</h3>
+        {% for actor in actors %}
+            <a class="lead" href="actor?id={{actor.id}}" ><img class="rounded-circle" src={{actor.picture}} height="50px" width="46px" /> {{actor.name}}</a><br/><br/>
+        {% endfor %}
+        <br/>
+        <a href="#">{{director[1]}}</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
