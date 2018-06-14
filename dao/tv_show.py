@@ -8,3 +8,29 @@ def get_tv_show(app, id):
     data = cursor.fetchone()
     tvshow = tv_show.TvShow(id, data[0], data[1], data[2], data[3], data[4], data[5], data[6])
     return tvshow
+
+
+def get_tv_show_by_name(app, name):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM tv_shows WHERE name LIKE '%{name}%'")
+    data = cursor.fetchone()
+    tvshow = tv_show.TvShow(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7])
+    return tvshow
+
+
+def get_tv_show_by_genre(app, id):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM tv_shows WHERE id_genre={id}")
+    datas = cursor.fetchall()
+    tv_shows = []
+    for data in datas:
+        _tv_show = tv_show.TvShow(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7])
+        tv_shows.append(_tv_show)
+
+    return tv_shows
+
+
+def insert_tv_show(app, name, description, seasons, birth, poster, trailer, id_genre):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"INSERT INTO tv_shows (name, description, seasons, birth, poster, trailer, id_genre)"
+                   f" VALUES({name}, '{description}', {seasons}, {birth}, {poster}, {trailer}, {id_genre})")

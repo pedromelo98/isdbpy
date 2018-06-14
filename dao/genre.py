@@ -8,3 +8,11 @@ def get_genre(app, id):
     data = cursor.fetchone()
     genre_by_id = genre.Genre(id, data[0])
     return genre_by_id
+
+
+def get_genre_by_name(app, name):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM genres WHERE name='{name}'")
+    data = cursor.fetchone()
+    genre_by_name = genre.Genre(data[0], data[1])
+    return genre_by_name

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISDb</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon-16x16.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/"><img src="../static/tvshow.png" width="100" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="tv_shows">Series <span class="badge badge-secondary">{{tv_shows.__len__()}}</span></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gêneros
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for genre in genres %}
+                    <a class="dropdown-item" href="tv_show_by_genre?id={{genre[0]}}">{{genre[1]}}</a>
+                {% endfor %}
+            </div>
+          </li>
+            <form action="tv_show_by_name?name={{name}}" class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar séries..." name="name" aria-label="Buscar séries...">
+              <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block mx-auto" src="../static/isdb_bbb.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block mx-auto" src="../static/isdb_papell.png" alt="Second slide">
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="container" >
+        <form action="insert_success" >
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputName">Nome</label>
+              <input type="text" name="name" class="form-control" id="inputName" placeholder="Nome...">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="linkdoposter">Poster</label>
+              <input type="url" name="poster" class="form-control" id="linkdoposter" placeholder="Link do poster...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputDescription">Descrição:</label>
+              <input type="text" name="description" class="form-control" id="inputDescription">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">Gênero</label>
+              <select id="inputState" name="genre" class="form-control">
+                  {% for genre in genres %}
+                <option>{{genre[1]}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputSeasons">Temporadas</label>
+              <input type="number" name="seasons" class="form-control" id="inputSeasons">
+            </div>
+          </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputTrailer">Trailer:</label>
+              <input type="url" name="trailer" class="form-control" id="inputTrailer">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputBirth">Criada em:</label>
+              <input type="text" name="birth" class="form-control" id="inputBirth">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Inserir</button>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

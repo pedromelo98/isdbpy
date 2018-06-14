@@ -23,7 +23,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% for genre in genres %}
-                        <a class="dropdown-item" href="#">{{genre[1]}}</a>
+                        <a class="dropdown-item" href="tv_show_by_genre?id={{genre[0]}}">{{genre[1]}}</a>
                     {% endfor %}
                 </div>
               </li>

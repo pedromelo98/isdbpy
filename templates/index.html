@@ -23,10 +23,14 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for genre in genres %}
-                    <a class="dropdown-item" href="#">{{genre[1]}}</a>
+                    <a class="dropdown-item" href="tv_show_by_genre?id={{genre[0]}}">{{genre[1]}}</a>
                 {% endfor %}
             </div>
           </li>
+            <form action="tv_show_by_name?name={{name}}" class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar séries..." name="name" aria-label="Buscar séries...">
+              <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
       </div>
     </nav>
@@ -41,7 +45,9 @@
         </div>
       </div>
     </div>
-
+    <br/>
+    <br/>
+    <a href="insert_tv_show" ><button type="button" class="btn btn-secondary btn-lg btn-block">Inserir nova série</button></a>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
