@@ -95,3 +95,10 @@ def delete_tv_show():
     id = request.args.get("id")
     tv_show.delete_tv_show(app, id)
     return render_template('tv_shows.html', tv_shows=data, genres=genres)
+
+
+@app.route("/actor_by_name")
+def _actor_by_name():
+    name = request.args.get("name")
+    actor_by_name = actor.get_actor_by_name(app, name)
+    return render_template('actor.html', tv_shows=data, genres=genres, actor=actor_by_name)
