@@ -31,10 +31,15 @@ def get_tv_show_by_genre(app, id):
 
 
 def insert_tv_show(app, name, description, seasons, birth, poster, trailer, id_genre):
-    print('name:', name, 'description:', description, 'seasons:', seasons, 'birth:', birth, 'poster', poster, 'trailer:', trailer, 'id_genre:', id_genre)
     connect, cursor = connection.get_connection(app)
     cursor.execute(f"INSERT INTO tv_shows (name, description, seasons, birth, poster, trailer, id_genre) "
                    f"VALUES ('{name}', '{description}', '{seasons}', '{birth}', '{poster}', '{trailer}', '{id_genre}')")
     cursor.close()
     connect.commit()
     connect.close()
+
+
+def delete_tv_show(app, id):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"DELETE FROM tv_shows WHERE id={id}")
+    connect.commit()

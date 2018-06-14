@@ -88,3 +88,10 @@ def insert_success():
     genre_by_name = genre.get_genre_by_name(app, genre_name)
     tv_show.insert_tv_show(app, name, description, seasons, birth, poster, trailer, genre_by_name.id)
     return render_template('index.html', tv_shows=data, genres=genres)
+
+
+@app.route('/delete_tv_show')
+def delete_tv_show():
+    id = request.args.get("id")
+    tv_show.delete_tv_show(app, id)
+    return render_template('tv_shows.html', tv_shows=data, genres=genres)
