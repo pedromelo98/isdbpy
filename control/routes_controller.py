@@ -28,11 +28,13 @@ def _tv_show():
     cursor.execute(f"SELECT id_actor, id_director FROM cast WHERE id_tvshow ={id}")
     cast = cursor.fetchall()
     actors = []
-    for person in cast:
-        act = actor.get_actor(app,  person[0])
-        actors.append(act)
-    cursor.execute(f"SELECT * from director WHERE id ={cast[0][1]}")
-    director = cursor.fetchone()
+    director = []
+    if cast:
+        for person in cast:
+            act = actor.get_actor(app,  person[0])
+            actors.append(act)
+        cursor.execute(f"SELECT * from director WHERE id ={cast[0][1]}")
+        director = cursor.fetchone()
     return render_template('tv_show.html', tv_show=tvs, tv_shows=data, genres=genres, genre=genre_by_id, actors=actors, director=director)
 
 
@@ -59,11 +61,13 @@ def _tv_show_by_name():
     cursor.execute(f"SELECT id_actor, id_director FROM cast WHERE id_tvshow ={tvs.id}")
     cast = cursor.fetchall()
     actors = []
-    for people in cast:
-        act = actor.get_actor(app,  people[0])
-        actors.append(act)
-    cursor.execute(f"SELECT * from director WHERE id ={cast[0][1]}")
-    director = cursor.fetchone()
+    director = []
+    if cast:
+        for people in cast:
+            act = actor.get_actor(app,  people[0])
+            actors.append(act)
+        cursor.execute(f"SELECT * from director WHERE id ={cast[0][1]}")
+        director = cursor.fetchone()
     return render_template('tv_show.html', tv_show=tvs, tv_shows=data, genres=genres, genre=genre_by_id, actors=actors, director=director)
 
 
