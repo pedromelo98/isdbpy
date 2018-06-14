@@ -102,3 +102,26 @@ def _actor_by_name():
     name = request.args.get("name")
     actor_by_name = actor.get_actor_by_name(app, name)
     return render_template('actor.html', tv_shows=data, genres=genres, actor=actor_by_name)
+
+
+@app.route('/edit_tv_show')
+def edit_tv_show():
+    id = request.args.get("id")
+    tvs = tv_show.get_tv_show(app, id)
+    genre_by_id = genre.get_genre(app, tvs.genre)
+    return render_template('edit_tv_show.html', tv_shows=data, genres=genres, tv_show=tvs, genre=genre_by_id)
+
+
+@app.route('/edit_success')
+def edit_success():
+    id = request.args.get("id")
+    name = request.args.get("name")
+    description = request.args.get("description")
+    seasons = request.args.get("seasons")
+    birth = request.args.get("birth")
+    poster = request.args.get("poster")
+    trailer = request.args.get("trailer")
+    genre_name = request.args.get("genre")
+    genre_by_name = genre.get_genre_by_name(app, genre_name)
+    tv_show.edit_tv_show(app, id, name, description, seasons, birth, poster, trailer, genre_by_name.id)
+    return render_template('index.html', tv_shows=data, genres=genres)

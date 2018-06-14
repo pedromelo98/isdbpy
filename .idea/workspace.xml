@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dcc086b-5ceb-4694-b99d-a9d49d1ebf86" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/edit_tv_show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control/routes_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/routes_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/actor.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/actor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/tv_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/tv_show.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tv_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tv_show.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="routes_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/routes_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="26" />
+            <state relative-caret-position="304">
+              <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -28,11 +29,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="edit_tv_show.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/edit_tv_show.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="actor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/actor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -55,17 +65,17 @@
       <file leaf-file-name="insert_tv_show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/insert_tv_show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+            <state relative-caret-position="340">
+              <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tv_show.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tv_show.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/tv_show.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="321">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -82,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -94,20 +104,8 @@
       <file leaf-file-name="tv_show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/tv_show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tv_show_by_genre.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tv_show_by_genre.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="55" column="86" lean-forward="true" selection-start-line="55" selection-start-column="86" selection-end-line="55" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="332">
+              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -149,13 +147,14 @@
         <option value="$PROJECT_DIR$/templates/actor.html" />
         <option value="$PROJECT_DIR$/templates/tv_shows.html" />
         <option value="$PROJECT_DIR$/templates/tv_show_by_genre.html" />
-        <option value="$PROJECT_DIR$/templates/insert_tv_show.html" />
         <option value="$PROJECT_DIR$/dao/genre.py" />
-        <option value="$PROJECT_DIR$/templates/tv_show.html" />
-        <option value="$PROJECT_DIR$/dao/tv_show.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/dao/actor.py" />
+        <option value="$PROJECT_DIR$/templates/insert_tv_show.html" />
+        <option value="$PROJECT_DIR$/templates/tv_show.html" />
+        <option value="$PROJECT_DIR$/templates/edit_tv_show.html" />
         <option value="$PROJECT_DIR$/control/routes_controller.py" />
+        <option value="$PROJECT_DIR$/dao/tv_show.py" />
       </list>
     </option>
   </component>
@@ -377,13 +376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/tv_show.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/actor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -435,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/insert_tv_show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -449,47 +434,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/insert_tv_show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/tv_show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+        <state relative-caret-position="332">
+          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/tv_show.py">
+    <entry file="file://$PROJECT_DIR$/model/tv_show.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/actor.py">
+    <entry file="file://$PROJECT_DIR$/templates/edit_tv_show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control/routes_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="26" />
+        <state relative-caret-position="304">
+          <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/dao/actor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/tv_show.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
