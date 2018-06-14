@@ -46,8 +46,8 @@ def delete_tv_show(app, id):
 
 
 def edit_tv_show(app, id, name, description, seasons, birth, poster, trailer, id_genre):
+    print(id)
     connect, cursor = connection.get_connection(app)
     cursor.execute(f"UPDATE tv_shows SET name='{name}', description='{description}', seasons='{seasons}', "
                    f"birth='{birth}', poster='{poster}', trailer='{trailer}', id_genre='{id_genre}' WHERE id={id}")
     connect.commit()
-    connect.close()
