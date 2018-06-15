@@ -2,6 +2,13 @@ from dao import connection
 from model import tv_show
 
 
+def get_all_tv_show(app):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM tv_shows ORDER BY name")
+    data = cursor.fetchall()
+    return data
+
+
 def get_tv_show(app, id):
     connect, cursor = connection.get_connection(app)
     cursor.execute(f"SELECT name, description, seasons, birth, poster, trailer, id_genre FROM tv_shows WHERE id={id}")

@@ -2,6 +2,13 @@ from dao import connection
 from model import genre
 
 
+def get_all_genres(app):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM genres")
+    data = cursor.fetchall()
+    return data
+
+
 def get_genre(app, id):
     connect, cursor = connection.get_connection(app)
     cursor.execute(f"SELECT name FROM genres WHERE id={id}")

@@ -17,6 +17,7 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="tv_shows">Series <span class="badge badge-secondary">{{tv_shows.__len__()}}</span></a>
+          <a class="nav-item nav-link" href="actors">Atores</a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Gêneros
@@ -27,14 +28,6 @@
                 {% endfor %}
             </div>
           </li>
-            <form action="tv_show_by_name?name={{name}}" class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar séries..." name="name" aria-label="Buscar séries...">
-              <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-            <form action="actor_by_name?name={{name}}" class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar atores..." name="name" aria-label="Buscar séries...">
-              <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
         </div>
       </div>
     </nav>

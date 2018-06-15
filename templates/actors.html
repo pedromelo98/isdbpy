@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{tv_show.name}}</title>
+    <title>Series</title>
     <link rel="shortcut icon" href="{{url_for('static', filename='favicon-16x16.png')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
@@ -16,7 +16,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="tv_shows">Series <span class="badge badge-secondary">{{tv_shows.__len__()}}</span></a>
+              <a class="nav-item nav-link active" href="tv_shows">Series <span class="badge badge-secondary">{{tv_shows.__len__()}}</span></a>
               <a class="nav-item nav-link" href="actors">Atores</a>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,44 +28,31 @@
                     {% endfor %}
                 </div>
               </li>
+                <form action="actor_by_name?name={{name}}" class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Buscar atores..." name="name" aria-label="Buscar séries...">
+                  <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
             </div>
           </div>
     </nav>
 
+    <div class="row mt-3" >
+                {% for actor in actors %}
+        <div class="ml-5" >
+          <div class="card mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+              <a href="actor?id={{actor[0]}}" class="btn btn-secondary"><img src={{actor[5]}} ></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{actor[1]}}</h5>
+          </div>
+          <div class="card-header">
+              <a href="actor?id={{actor[0]}}"class="btn btn-secondary">Mais...</a>
+          </div>
+        </div>
+        </div>
+                {% endfor %}
 
-    <div class="jumbotron">
-        <div class="container">
-        <div class="row" >
-            <div class="col-md-12">
-                <h1>{{tv_show.name}}</h1>
-            </div>
-            <div class="col-md-2" >
-                <img src={{tv_show.poster}} alt="..." class="img-thumbnail responsive" >
-            </div>
-            <div class="col-md-6" align="left">
-                <br/>
-                <p class="lead" >{{tv_show.description}}</p>
-                <h6>Gênero: {{genre.name}}</h6>
-                <h6>Criada em: {{tv_show.birth}}</h6>
-                <h6>{{tv_show.seasons}} temporadas</h6>
-                <a href="delete_tv_show?id={{tv_show.id}}" class="lead" ><h6>Deletar série</h6></a>
-                <a href="edit_tv_show?id={{tv_show.id}}" class="lead" ><h6>Editar série</h6></a>
-            </div>
-        </div>
-        <hr class="my-4">
-            <h3>Trailer:</h3>
-            <br/>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src={{tv_show.trailer}} allowfullscreen></iframe>
-            </div>
-        </div>
-        <hr class="my-4">
-        <h3>Elenco:</h3>
-        {% for actor in actors %}
-            <a class="lead" href="actor?id={{actor.id}}" ><img class="rounded-circle" src={{actor.picture}} height="50px" width="46px" /> {{actor.name}}</a><br/><br/>
-        {% endfor %}
-        <br/>
-        <a href="#">{{director[1]}}</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

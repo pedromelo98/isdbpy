@@ -2,6 +2,13 @@ from dao import connection
 from model import actor
 
 
+def get_all_actors(app):
+    connect, cursor = connection.get_connection(app)
+    cursor.execute(f"SELECT * FROM actors ORDER BY name")
+    data = cursor.fetchall()
+    return data
+
+
 def get_actor(app, id):
     connect, cursor = connection.get_connection(app)
     cursor.execute(f"SELECT name, biografy, birthplace, birth, picture FROM actors WHERE id={id}")
